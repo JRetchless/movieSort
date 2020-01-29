@@ -32,7 +32,7 @@ app.get('/movie', function handleGetMovies(req, res) {
 
     if (req.query.country) {
         response = response.filter(movies =>
-        movies.country.includes(req.query.country)
+        movies.country.toLowerCase().includes(req.query.country.toLowerCase())
         )
     }
 
