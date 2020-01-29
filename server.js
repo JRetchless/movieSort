@@ -30,17 +30,17 @@ app.get('/movie', function handleGetMovies(req, res) {
     )
   }
 
-    if (req.query.country) {
-        response = response.filter(movies =>
-        movies.country.toLowerCase().includes(req.query.country.toLowerCase())
-        )
-    }
+  if (req.query.country) {
+    response = response.filter(movies =>
+      movies.country.toLowerCase().includes(req.query.country.toLowerCase())
+    )
+  }
 
-    if (req.query.avg_vote) {
-        response = response.filter(movies =>
-            movies.avg_vote >=req.query.avg_vote
-        ) 
-    }
+  if (req.query.avg_vote) {
+    response = response.filter(movies =>
+      movies.avg_vote >=req.query.avg_vote
+    ) 
+  }
   res.json(response)
 })
 
