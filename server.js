@@ -18,7 +18,6 @@ app.use(function validateBearerToken(req, res, next) {
   if (!authToken || authToken.split(' ')[1] !== apiToken) {
     return res.status(401).json({ error: 'Unauthorized request' })
   }
-  // move to the next middleware
   next()
 })
 
@@ -31,7 +30,6 @@ app.get('/movie', function handleGetMovies(req, res) {
     )
   }
 
-  // filter our pokemon by type if type query param is present
     if (req.query.country) {
         response = response.filter(movies =>
         movies.country.includes(req.query.country)
